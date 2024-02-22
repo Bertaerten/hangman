@@ -42,7 +42,7 @@ public class Hangman {
             } 
           }
           if (wrongGuesses.contains(lowerCase)== false && letterInSecretWord == false ){
-            wrongGuesses.add(lowerCase);
+            wrongGuesses.add(lowerCase);// tilføger de forkerte bogstaver til listen hvis de ikke allerede er der
         }
           return letterInSecretWord;
         }
@@ -59,7 +59,7 @@ public class Hangman {
     }
 
     public boolean isAlive(){
-        // 5 fordi vi starter på 0 og har 6 liv
+        // hvis den er større end 5 fordi vi starter på 0 og har 6 liv
         if(wrongGuesses.size() > 5 ){
             return false;
         }
