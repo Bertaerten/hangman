@@ -1,14 +1,17 @@
 package classes;
 
 import processing.core.PApplet;
+import java.util.ArrayList; 
+//import java.util.List;
 
 public class Hangman {
     private String secretWord;
     private char[] guessedLetters;
 
+    private ArrayList<Character> wrongGuesses = new ArrayList<Character>(); 
+
     public Hangman(String word){
         secretWord = word.toLowerCase();
-        guessedLetters = new char[secretWord.length()];
 
         //init partial word, and set all
         //letters to '_'
@@ -30,6 +33,8 @@ public class Hangman {
             if (secretWord.charAt(i) == lowerCase){
               guessedLetters[i] = lowerCase;
               letterInSecretWord = true;
+            } else if (wrongGuesses.contains(lowerCase)== false ){
+                wrongGuesses.add(lowerCase);
             }
           }
         return letterInSecretWord;
@@ -46,6 +51,14 @@ public class Hangman {
     }
 
     public boolean isAlive(){
-        return true;
+        // 5 fordi vi starter på 0 og har 6 liv
+        if(wrongGuesses.size() > 5 ){
+            return false;
+        }
+        else{
+            return true;
+        }
+        
+        
     }
 }
