@@ -79,6 +79,8 @@ public class HangmanTest {
 
     //We should have 6 lives at the start of the game
     //lose one with each failed guess
+    //We should have 6 lives at the start of the game
+    //lose one with each failed guess
     @Test
     public void loseAllLives(){
         final Hangman game = new Hangman("kitten");
