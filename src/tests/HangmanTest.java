@@ -150,7 +150,7 @@ public class HangmanTest {
                 //is a letter a-z;
                 
             } else if (i >= 97 && i <= 122) {
-                    
+                    //har delt if statement op i 2 da det var umugligt før
             }
             else if (i == 229 || i == 230 || i == 248 ||
                        i == 297 || i == 298 || i == 197) {
@@ -162,6 +162,6 @@ public class HangmanTest {
            
         assertTrue(game.isAlive());
     }
-// jeg vurdere at den her test er wack, mit spil tager ikke imod tal og særlige karaterer, men failer testen, og løber tør for ram
+// jeg vurdere at den her test er wack, mit spil tager ikke imod tal og særlige karaterer, men failer testen, og løber tør for ram når testen køres (65 tusind karatere i en arrayliste)
  
 }
