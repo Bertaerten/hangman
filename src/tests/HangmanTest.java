@@ -146,9 +146,13 @@ public class HangmanTest {
         //we check all unicode symbols (16 bits)
         assertTrue(game.isAlive());
         for (int i = 0; i < 65536; i++){
-            if (i >= 65 && i <= 90 && i >= 97 && i <= 122){
+            if (i >= 65 && i <= 90 ){
                 //is a letter a-z;
-            } else if (i == 229 || i == 230 || i == 248 ||
+                
+            } else if (i >= 97 && i <= 122) {
+                    
+            }
+            else if (i == 229 || i == 230 || i == 248 ||
                        i == 297 || i == 298 || i == 197) {
                 //æ ø å Æ Ø Å
             } else {
@@ -158,7 +162,6 @@ public class HangmanTest {
            
         assertTrue(game.isAlive());
     }
-
-    //implement a test which test if we can win
-    //YOUR TEST HERE
+// jeg vurdere at den her test er wack, mit spil tager ikke imod tal og særlige karaterer, men failer testen, og løber tør for ram
+ 
 }

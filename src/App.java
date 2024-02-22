@@ -22,6 +22,9 @@ public class App  extends PApplet{
     public void draw(){
         background(0);
         game.drawGuessedLetters(this);
+        if(!game.isAlive()){
+            background(125);
+        }
     }
 
     public void keyPressed(){

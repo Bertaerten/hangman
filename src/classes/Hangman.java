@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Hangman {
     private String secretWord;
     private char[] guessedLetters;
-
+// en arrayliste til at holde styr på de forkerte gæt vi har lavet 
     private ArrayList<Character> wrongGuesses = new ArrayList<Character>(); 
 
     public Hangman(String word){
@@ -27,17 +27,25 @@ public class Hangman {
 
     public boolean guess(char letter){
         char lowerCase = Character.toLowerCase(letter);
-        
         boolean letterInSecretWord = false;
+        
+        // vil tjekke om det er et bogstav eller tal
+        if (!Character.isLetter(lowerCase)) {
+            return letterInSecretWord;
+        } else{
+
         for (int i = 0; i < secretWord.length(); i++){
             if (secretWord.charAt(i) == lowerCase){
               guessedLetters[i] = lowerCase;
               letterInSecretWord = true;
-            } else if (wrongGuesses.contains(lowerCase)== false ){
-                wrongGuesses.add(lowerCase);
-            }
+             
+            } 
           }
-        return letterInSecretWord;
+          if (wrongGuesses.contains(lowerCase)== false && letterInSecretWord == false ){
+            wrongGuesses.add(lowerCase);
+        }
+          return letterInSecretWord;
+        }
     }
 
     public void drawGuessedLetters(PApplet p){
